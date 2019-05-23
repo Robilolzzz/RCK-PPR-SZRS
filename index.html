@@ -4,41 +4,76 @@
     </head>
     <style>
     .number{
-        background-color:rgb(184, 237, 255);
+        background-color:lightblue;
         text-align: center;
         font-size: 90px;
     }
-    .hand1{
+    .code{
         width:50%;
-        height:80%;
+        height: 70%;
         float:left;
         font-size:161px;
         text-align: center;
-        padding-top:150px;
+        padding-top: 50px;
+        border: 1px solid black;
     }
-    .hand2{
+    .codeai{
         width:49%;
-        height: 80%;
+        height: 70%;
         float:left;
-        padding-top:150px;
         font-size:161px;
         text-align: center;
-        background-color:rgb(215, 240, 248); 
+        padding-top: 50px;
+        background-color:lightblue; 
+        border: 1px solid black;
         
     }
     .codehand{
         text-align: center;
         font-size: 50px;
         height: 10%;
-        padding-top: 300px;
+ 
     }
     </style>
     <body>
         <div class="number">1:0</div>
 
-        <div class="hand1">✌️
-            <div class="codehand">✊ ✋ ✌</div>
+        <div class="code"><p id="quoteDisplay" >✊</p>
+            <div class="codehand">
+                <span onclick="game2(2)">✊</span>
+                <span onclick="game2(1)">✋</span>
+                <span onclick="game2(0)">✌</span>
+            </div>
+            
         </div>
-        <div class="hand2">✋</div>
+        <div class="codeai"><p id="quoteDisplay" onclick="game()">✊</p></div>
+        <script>
+            function game(){
+         var computerChoice = Math.random();
+        if (computerChoice < 0.34) {
+            computerChoice = "✊";
+        } else if(computerChoice < 0.67) {
+            computerChoice = "✋";
+        } else if(computerChoice > 0.67){
+            computerChoice = "✌";
+        }
+            }
+        function game2(ch) {
+            if(ch == 0)
+            {
+                document.getElementById("quoteDisplay").innerHTML = "✌";
+            }
+            else if(ch == 1)
+            {
+                document.getElementById("quoteDisplay").innerHTML = "✋";
+            }
+            else if(ch == 2)
+            {
+                document.getElementById("quoteDisplay").innerHTML = "✊";
+            }
+            game();
+            }
+        </script>
+        
     </body>
 </html>
