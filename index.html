@@ -46,33 +46,89 @@
         </div>
         <div class="hand2"><p id="quoteDisplay" onclick="game()">✊</p></div>
         <script>
+                function game(ch){
+             var computerChoice = Math.random();
+            if (computerChoice < 0.34) {
+                computerChoice = "✊";
+                console.log('enemy chose rock');
+                return false;
+            } else if(computerChoice < 0.67) {
+                computerChoice = "✋";
+                console.log('enemy chosent paper');
+                return false;
+            } else if(computerChoice > 0.67){
+                computerChoice = "✌";
+                console.log('enemy has chosenth scissors');
+                return false;
+            }
             
-            function game(){
-         var computerChoice = Math.random();
-        if (computerChoice < 0.34) {
-            computerChoice = "✊";
-        } else if(computerChoice < 0.67) {
-            computerChoice = "✋";
-        } else if(computerChoice > 0.67){
-            computerChoice = "✌";
-        }
-            }
-        function game2(ch) {
-            if(ch == 0)
-            {
-                document.getElementById("quoteDisplay").innerHTML = "✌";
-            }
-            else if(ch == 1)
-            {
-                document.getElementById("quoteDisplay").innerHTML = "✋";
-            }
-            else if(ch == 2)
-            {
-                document.getElementById("quoteDisplay").innerHTML = "✊";
-            }
-            game();
-            }
-        </script>
-        
-    </body>
-</html>
+                if(computerChoice === "✋"){
+                    if(computerChoice === game2(1))
+                    {
+                        return "a tie";
+    
+                    }
+                    else if (computerChoice === game2(0))
+                    {
+                        return "u lose";
+                    }
+                    else
+                    {
+                        return "u win";
+                    }
+                }
+    
+                if(computerChoice === "✌"){
+                    if(computerChoice === game2(0))
+                    {
+                        return "a tie";
+    
+                    }
+                    else if (computerChoice === game2(2))
+                    {
+                        return "u lose";
+                    }
+                    else
+                    {
+                        return "u win";
+                    }
+                }
+    
+                if(computerChoice === "✊"){
+                    if(computerChoice === game2(2))
+                    {
+                        return "a tie";
+    
+                    }
+                    else if (computerChoice === game2(1))
+                    {
+                        return "u lose";
+                    }
+                    else
+                    {
+                        return "u win";
+                    }
+                }
+                }
+    
+                
+            function game2(ch) {
+                if(ch == 0)
+                {
+                    document.getElementById("quoteDisplay").innerHTML = "✌";
+                }
+                else if(ch == 1)
+                {
+                    document.getElementById("quoteDisplay").innerHTML = "✋";
+                }
+                else if(ch == 2)
+                {
+                    document.getElementById("quoteDisplay").innerHTML = "✊";
+                }
+               game(ch);
+                
+                };
+            </script>
+            
+        </body>
+    </html>
