@@ -61,56 +61,28 @@
                 console.log('enemy has chosenth scissors');
                 return false;
             }
-            
-                if(computerChoice === "✋"){
-                    if(computerChoice === game2(1))
-                    {
-                        return "a tie";
-    
-                    }
-                    else if (computerChoice === game2(0))
-                    {
-                        return "u lose";
-                    }
-                    else
-                    {
-                        return "u win";
-                    }
+
+            if(com === ch)
+                {
+                    alert("a tie");
+
                 }
-    
-                if(computerChoice === "✌"){
-                    if(computerChoice === game2(0))
-                    {
-                        return "a tie";
-    
-                    }
-                    else if (computerChoice === game2(2))
-                    {
-                        return "u lose";
-                    }
-                    else
-                    {
-                        return "u win";
-                    }
+                else if ((com == 2) && (ch == 0) )
+                {
+                    alert("u lose");
                 }
-    
-                if(computerChoice === "✊"){
-                    if(computerChoice === game2(2))
-                    {
-                        return "a tie";
-    
-                    }
-                    else if (computerChoice === game2(1))
-                    {
-                        return "u lose";
-                    }
-                    else
-                    {
-                        return "u win";
-                    }
+                else if ((com == 1) && (ch == 2) )
+                {
+                    alert("u lose");
+                }
+                else if ((com == 0) && (ch == 1) )
+                {
+                    alert("u lose");
+                }
+                else{
+                    alert("U got enough of that loosin shit and actually won")
                 }
                 }
-    
                 
             function game2(ch) {
                 if(ch == 0)
